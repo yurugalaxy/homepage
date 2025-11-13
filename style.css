@@ -2,43 +2,103 @@
 Josh's Custom CSS Reset
 https://www.joshwcomeau.com/css/custom-css-reset/
 */
-*, *::before, *::after {
-        box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
+
 * {
-        margin: 0;
+	margin: 0;
+	/* border: 1px solid red; */
 }
+
 body {
-        line-height: 1.5;
-        -webkit-font-smoothing: antialiased;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
 }
-img, picture, video, canvas, svg {
-        display: block;
-        max-width: 100%;
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
 }
-input, button, textarea, select {
-        font: inherit;
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
 }
-p, h1, h2, h3, h4, h5, h6 {
-        overflow-wrap: break-word;
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
 }
-#root, #__next {
-        isolation: isolate;
+
+#root,
+#__next {
+	isolation: isolate;
 }
 
 /* END CSS RESET */
 
+@font-face {
+	font-family: "JetBrainsMono";
+	src: url('./resources/fonts/JetBrainsMono.ttf');
+}
+
 body {
-	background-color: #2b2b2b;
+	font-family: JetBrainsMono;
+	background-color: #4b4453;
 }
 
-
-.nametag {
-	color: #f7f8f9;
-	padding: 100px;
+html,
+body,
+.content {
+	height: 100vh;
+	overflow: hidden;
+	cursor: none;
 }
 
-.description {
-	color: #f7f8f9;
-	padding-left: 100px;
+#cursor {
+	transform: translate(-20%, -20%);
+	position: absolute;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+#glow {
+	background: url('./resources/images/hurl.png'), radial-gradient(circle at center, #0a95cc 0%, rgba(247, 121, 161, 1) 30%);
+	-webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 55%);
+	mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 55%);
+	width: 350vmin;
+	height: 350vmin;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	border-radius: 50vw;
+	z-index: -1;
+	transition-duration: 1700ms;
+	transition-timing-function: ease-out;
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main_text {
+	background-color: #f7f8f9;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
