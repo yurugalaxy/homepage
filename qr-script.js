@@ -1,5 +1,5 @@
 function docReady(fn) {
-	if (document.readyState === "Complete" || document.readyState === "interactive") {
+	if (document.readyState === "complete" || document.readyState === "interactive") {
 		setTimeout(fn, 1);
 	} else {
 		document.addEventListener("DOMContentLoaded", fn);
@@ -10,7 +10,7 @@ docReady(function() {
 	var resultContainer = document.getElementById('qr-reader-result');
 	var lastResult = 0;
 	var countResult = 0;
-	var html5QrScanner = new Html5QrCodeScanner(
+	var html5QrcodeScanner = new Html5QrcodeScanner(
 		"qr-reader", { fps: 10, qrbox: 250 });
 
 	function onScanSuccess(decodedText, decodedResult) {
@@ -21,11 +21,11 @@ docReady(function() {
 
 			resultContainer.innerHTML += `<div>[${countResult}] - ${decodedText}</div>`;
 
-			html5QrScanner.clear();
+			html5QrcodeScanner.clear();
 		}
 	}
 
 	function onScanError(qrCodeError) { }
 
-	html5QrScanner.render(onScanSuccess, onScanError);
+	html5QrcodeScanner.render(onScanSuccess, onScanError);
 });
