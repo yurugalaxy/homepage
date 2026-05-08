@@ -10,7 +10,7 @@ https://www.joshwcomeau.com/css/custom-css-reset/
 
 * {
 	margin: 0;
-	/* border: 1px solid red; */
+	border: 1px solid red;
 }
 
 body {
@@ -82,6 +82,7 @@ h1 {
 	font-size: 108px;
 	font-weight: 900;
 	line-height: 0.9em;
+	margin-bottom: 42px;
 }
 
 h2 {
@@ -124,6 +125,16 @@ img {
 	text-align: center;
 }
 
+.Links {
+	display: flex;
+	justify-content: center;
+	gap: 24px;
+}
+
+.Links a {
+	height: 42px;
+}
+
 #Footer {
 	width: 100%;
 	text-align: center;
@@ -131,12 +142,6 @@ img {
 	max-height: 1.2em;
 	align-self:center;
 	font-size: 12px;
-}
-
-.Links {
-	display: flex;
-	justify-content: center;
-	gap: 24px;
 }
 
 /* END CSS RESET */
